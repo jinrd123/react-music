@@ -1,41 +1,32 @@
 import { Navigate } from "react-router-dom";
-// import Home from "../pages/Home";
-// import About from "../pages/About";
-// import Rank from "../pages/Rank";
-// import Recommend from "../pages/Recommend";
-// import NotFound from "../pages/NotFound";
+import React from "react";
+
+const Home = React.lazy(() => import("../application/Home"));
+const Recommend = React.lazy(() => import("../application/Recommend"));
+const Singers = React.lazy(() => import("../application/Singers"));
+const Rank = React.lazy(() => import("../application/Rank"));
 
 const routes = [
   {
     path: "/",
     element: <Navigate to="/home" />
   },
-//   {
-//     path: "/home",
-//     element: <Home />,
-//     children: [
-//         {
-//             path: "/home",
-//             element: <Navigate to="/home/recommend" />
-//         },
-//         {
-//             path: "/home/recommend",
-//             element: <Recommend />
-//         },
-//         {
-//             path: "/home/rank",
-//             element: <Rank />
-//         },
-//     ]
-//   },
-//   {
-//     path: "/about",
-//     element: <About />
-//   },
-//   {
-//     path: "*",
-//     element: <NotFound />
-//   }
+  {
+    path: "/home",
+    element: <Home />
+  },
+  {
+    path: "/recommend",
+    element: <Recommend />
+  },
+  {
+    path: "/singers",
+    element: <Singers />
+  },
+  {
+    path: "/rank",
+    element: <Rank />
+  }
 ]
 
 export default routes;
