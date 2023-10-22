@@ -1,5 +1,5 @@
 import { Navigate } from "react-router-dom";
-import React from "react";
+import React, { Suspense } from "react";
 
 const Home = React.lazy(() => import("../application/Home"));
 const Recommend = React.lazy(() => import("../application/Recommend"));
@@ -13,19 +13,19 @@ const routes = [
   },
   {
     path: "/home",
-    element: <Home />
+    element: <Suspense><Home /></Suspense>
   },
   {
     path: "/recommend",
-    element: <Recommend />
+    element: <Suspense><Recommend /></Suspense>
   },
   {
     path: "/singers",
-    element: <Singers />
+    element: <Suspense><Singers /></Suspense>
   },
   {
     path: "/rank",
-    element: <Rank />
+    element: <Suspense><Rank /></Suspense>
   }
 ]
 
