@@ -1,18 +1,17 @@
 import { IconStyle } from './assets/iconfont/iconfont';
 import { GlobalStyle } from './style';
-import { Link, useRoutes } from "react-router-dom";
+import { useRoutes } from 'react-router-dom';
 import routes from './routes';
 
 function App() {
-
   return (
-    <div className="App">
+    <div className='App'>
       <GlobalStyle></GlobalStyle>
       <IconStyle></IconStyle>
-      <i className="iconfont">&#xe62b;</i>
-      { useRoutes(routes) }
+      <i className='iconfont'>&#xe62b;</i>
+      {useRoutes(routes)}
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

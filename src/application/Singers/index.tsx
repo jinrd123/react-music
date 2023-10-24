@@ -1,7 +1,5 @@
 function Singers() {
-    return (
-        <div>singers</div>
-    )
+  return <div>singers</div>;
 }
 
 export default Singers;
