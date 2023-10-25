@@ -6,17 +6,16 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "lint": "eslint . --fix --ext ts,tsx --report-unused-disable-directives",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives",
     "preview": "vite preview",
-    "prepare": "husky install"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
+    "prepare": "husky install",
+    "lint-staged": "lint-staged"
   },
   "lint-staged": {
-    "src/**/*.{js,vue}": ["prettier --write", "eslint --cache --fix", "git add"]
+    "*.{ts,tsx}": [
+        "echo 'begin to lint staged ts or tsx file'",
+        "eslint --fix"
+    ]
   },
   "dependencies": {
     "react": "^18.2.0",
